@@ -1,0 +1,15 @@
+server:
+  port: 8050
+spring:
+  application:
+    name: feign
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
+# 熔断机制，降级处理，在不改变各个微服务调用关系的前提下， 针对错误情况进行预先处理
+feign:
+  hystrix:
+    enabled: true #是否开启熔断器
